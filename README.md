@@ -13,7 +13,7 @@ Réaliser votre (futur) site CV (présentation + compétences + réalisations + 
 Répondre ou écrire à : benjamin@kolapsis.com (jamais @ynov.com)
 
 
-accueil : présentation du site
-expériences professionnelles et formation
+accueil : présentation du site  
+expériences professionnelles et formation  
 réalisation / galerie
 blog 
