@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Competence
+ *
+ * @ORM\Table(name="competence")
+ * @ORM\Entity
+ */
+class Competence
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=25, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_competence", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idCompetence;
+
+
+}
+

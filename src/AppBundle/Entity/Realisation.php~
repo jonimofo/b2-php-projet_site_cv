@@ -1,0 +1,47 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Realisation
+ *
+ * @ORM\Table(name="realisation")
+ * @ORM\Entity
+ */
+class Realisation
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=25, nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="year", type="datetime", nullable=false)
+     */
+    private $year;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_realisation", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idRealisation;
+
+
+}
+
