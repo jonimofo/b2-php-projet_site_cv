@@ -15,16 +15,27 @@ class Formation
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=25, nullable=false)
+     * @ORM\Column(name="title", type="string", length=100, nullable=false)
      */
     private $title;
 
+
+
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="year", type="datetime", nullable=false)
+     * @ORM\Column(name="year_start", type="string", length=25, nullable=false)
      */
-    private $year;
+    private $year_start;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="year_end", type="string", length=25, nullable=false)
+     */
+    private $year_end;
+
+
 
     /**
      * @var string
@@ -32,6 +43,8 @@ class Formation
      * @ORM\Column(name="content", type="text", nullable=false)
      */
     private $content;
+
+
 
     /**
      * @var integer
@@ -43,5 +56,86 @@ class Formation
     private $idFormation;
 
 
-}
 
+    /**
+     * Set title
+     *
+     * @param string $title
+     *
+     * @return Formation
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set year
+     *
+     * @param \DateTime $year
+     *
+     * @return Formation
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+
+        return $this;
+    }
+
+    /**
+     * Get year
+     *
+     * @return \DateTime
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     *
+     * @return Formation
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Get idFormation
+     *
+     * @return integer
+     */
+    public function getIdFormation()
+    {
+        return $this->idFormation;
+    }
+}

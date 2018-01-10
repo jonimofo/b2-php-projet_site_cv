@@ -22,9 +22,37 @@ class Competence
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text", nullable=false)
+     * @ORM\Column(name="content1", type="text", nullable=false)
      */
-    private $content;
+    private $content1;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content2", type="text", nullable=false)
+     */
+    private $content2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content3", type="text", nullable=false)
+     */
+    private $content3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content4", type="text", nullable=false)
+     */
+    private $content4;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content5", type="text", nullable=false)
+     */
+    private $content5;
 
     /**
      * @var integer

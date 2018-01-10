@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% block title %}
-        <title></title>
-    {% endblock %}
-    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.css/bootstrap.min.css') }}"type="text/css" rel="stylesheet"
-          media="screen,projection" />
-</head>
+        <title>
+            {% block title %}
+                BG
+            {% endblock %}
+        </title>
 
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.css/bootstrap.min.css') }}
+               "type="text/css" rel="stylesheet" media="screen,projection" />
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid/bootstrap-grid.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.css/bootstrap-reboot.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/style.css') }}"/>
+    {% endblock %}
+
+</head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/">LOGO</a>
@@ -20,22 +28,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="">Accueil</a>
+                <a class="nav-link" href="{{ path('cv_competences') }}">Compétences</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Compétences</a>
+                <a class="nav-link" href="{{ path('cv_experiences') }}">Expériences</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Formation</a>
+                <a class="nav-link" href="{{ path('cv_formation') }}">Formation</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Réalisations</a>
+                <a class="nav-link" href="{{ path('cv_realisations') }}">Réalisations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('blog_home') }}">BLOG</a>
             </li>
         </ul>
     </div>
 </nav>
-    {% block main %}
 
+    {% block main %}
+        <div class="test container-fluid">
+            dd
+        </div>
     {%  endblock %}
 
     {% block javascripts %}

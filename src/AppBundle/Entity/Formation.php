@@ -15,16 +15,27 @@ class Formation
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=25, nullable=false)
+     * @ORM\Column(name="title", type="string", length=100, nullable=false)
      */
     private $title;
 
+
+
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="year", type="datetime", nullable=false)
+     * @ORM\Column(name="year_start", type="string", length=25, nullable=false)
      */
-    private $year;
+    private $year_start;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="year_end", type="string", length=25, nullable=false)
+     */
+    private $year_end;
+
+
 
     /**
      * @var string
@@ -32,6 +43,8 @@ class Formation
      * @ORM\Column(name="content", type="text", nullable=false)
      */
     private $content;
+
+
 
     /**
      * @var integer
@@ -124,5 +137,53 @@ class Formation
     public function getIdFormation()
     {
         return $this->idFormation;
+    }
+
+    /**
+     * Set yearStart
+     *
+     * @param string $yearStart
+     *
+     * @return Formation
+     */
+    public function setYearStart($yearStart)
+    {
+        $this->year_start = $yearStart;
+
+        return $this;
+    }
+
+    /**
+     * Get yearStart
+     *
+     * @return string
+     */
+    public function getYearStart()
+    {
+        return $this->year_start;
+    }
+
+    /**
+     * Set yearEnd
+     *
+     * @param string $yearEnd
+     *
+     * @return Formation
+     */
+    public function setYearEnd($yearEnd)
+    {
+        $this->year_end = $yearEnd;
+
+        return $this;
+    }
+
+    /**
+     * Get yearEnd
+     *
+     * @return string
+     */
+    public function getYearEnd()
+    {
+        return $this->year_end;
     }
 }
