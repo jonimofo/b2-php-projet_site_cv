@@ -16,7 +16,7 @@ class User extends FOSUser
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=25, nullable=false)
+     * @ORM\Column(name="nom", type="string", length=25, nullable=true)
      */
     private $nom;
 
@@ -30,11 +30,11 @@ class User extends FOSUser
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_user", type="integer")
+     * @ORM\Column(name="id_user", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $idUser;
+    protected $id;
 
 
 
@@ -94,5 +94,10 @@ class User extends FOSUser
     public function getIdUser()
     {
         return $this->idUser;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->username;
     }
 }

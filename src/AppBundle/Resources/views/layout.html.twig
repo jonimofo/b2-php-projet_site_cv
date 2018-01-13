@@ -19,37 +19,54 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">LOGO</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('cv_competences') }}">Compétences</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('cv_experiences') }}">Expériences</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('cv_formation') }}">Formation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('cv_realisations') }}">Réalisations</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('blog_home') }}">BLOG</a>
-            </li>
+    <a class="navbar-brand" href="/"><img src="{{ asset('assets/images/logo_benjamin_giralt_grey.png') }}"                                           alt="logo-benjamin-giralt"></a>
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item"> <a class="nav-link" href="{{ path('cv_competences') }}">COMPETENCES</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{{ path('cv_experiences') }}">EXPERIENCES</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{{ path('cv_formation') }}">FORMATION</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{{ path('cv_realisations') }}">REALISATIONS</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="{{ path('blog_home') }}">BLOG</a> </li>
         </ul>
+    <div class="right">
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+            <a class="nav-link" href="{{ path('sonata_admin_dashboard') }}">
+                ACCES ADMIN
+            </a>
+        {% endif %}
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
+            <a class="nav-link" href="{{ path('fos_user_security_logout') }}">
+                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+            </a>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('fos_user_security_login') }}">
+                    {{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            </li>
+        {% endif %}
     </div>
 </nav>
 
+
+{% if app.request.hasPreviousSession %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            <div class="flash-{{ type }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+<div>
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+</div>
+
+
+
     {% block main %}
-        <div class="test container-fluid">
-            dd
-        </div>
+
     {%  endblock %}
 
     {% block javascripts %}

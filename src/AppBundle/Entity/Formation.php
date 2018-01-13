@@ -186,4 +186,9 @@ class Formation
     {
         return $this->year_end;
     }
+
+    public function __toString()
+    {
+        return (string) $this->title;
+    }
 }

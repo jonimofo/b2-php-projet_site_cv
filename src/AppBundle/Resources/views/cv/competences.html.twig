@@ -6,7 +6,10 @@
 {% endblock %}
 
 {% block main %}
-    <h1 class="competences-h1">COMPETENCES</h1>
-
-
+    <h1 class="h1-title">COMPETENCES</h1>
+    {% for competence in competences %}
+        <div class="competences-div" >
+            <img width="100" height="" src="{{ asset('assets/images/icones_competences/' ~ competence.imageName) }}" alt="">
+        </div>
+        {% endfor %}
 {% endblock %}

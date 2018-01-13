@@ -1,24 +1,23 @@
-{%  extends 'AppBundle::layout.html.twig' %}
+{% extends 'AppBundle::layout.html.twig' %}
 
-{%  block title %}
+{% block title %}
     {{ parent() }}
     - Expériences
 {% endblock %}
 
 {% block main %}
-    <h1 class="experiences-h1">EXPERIENCES</h1>
-
-    {% for experience in experiences %}
-        <div class="experiences">
-            <p class="experiences-year">{{ experience.year }}</p>
-            <p class="experiences-title">{{ experience.title }}</p>
-            <p class="experiences-location">{{ experience.location }}</p>
-            <p class="experiences-content">{{ experience.content1 }}</p>
-            <p class="experiences-content">{{ experience.content2 }}</p>
-            <p class="experiences-content">{{ experience.content3 }}</p>
-            <p class="experiences-content">{{ experience.content4 }}</p>
-            <p class="experiences-content">{{ experience.content5 }}</p>
-            <p class="experiences-content">{{ experience.content6 }}</p>
+    <div class="container-fluid">
+        <div class="container">
+            <h1 class="experiences-h1">EXPERIENCES</h1>
+            <div class="experiences-div">
+                {% for experience in experiences %}
+                    <div class="experience">
+                        <p class="experiences-year">{{ experience.year }}  {{ experience.title }}</p>
+                        <p class="experiences-location">{{ experience.location }}</p>
+                        <p class="experiences-content">{{ experience.content|nl2br }}</p>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-    {% endfor %}
+    </div>
 {% endblock %}

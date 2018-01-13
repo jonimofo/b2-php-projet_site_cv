@@ -1,11 +1,53 @@
-/* COMPETENCES */
-.competences-h1 {
+/* MAIN */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.main {
+    height: 100%;
+}
+.h1-title {
     color : #310e56;
     text-align: center;
     font-size: 36px;
     font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    margin-top: 15px;
+    margin-bottom: -15px;
+    padding-top: 10px;
 }
+
+
+/* ACCUEIL */
+.intro-title {
+    color : #310e56;
+    text-align: center;
+    font-size: 60px;
+    font-family: "URW Gothic";
+    margin-bottom: -15px;
+    padding-top: 20px;
+    font-weight: bolder;
+}
+.intro-div {
+    text-align: center;
+}
+.intro-phrase {
+    color: grey;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+    font-style: italic;
+}
+.intro-description {
+    text-align: center;
+    font-size: 24px;
+    font-family: "URW Gothic";
+    padding-top: 30px;
+}
+
+
+
+/* COMPETENCES */
+
 
 
 /* EXPERIENCES */
@@ -14,40 +56,28 @@
     text-align: center;
     font-size: 36px;
     font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
 }
 .experiences-year {
     color: #3b5998;
     text-align: center;
-    font-size: 26px;
-    padding-top: 20px;
-}
-.experiences-title {
-    text-align: center;
     font-size: 20px;
-    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    margin-top: -15px;
+    margin-bottom: 2px;
 }
 .experiences-location {
-    color: #0d6aad;
+    color: grey;
     text-align: center;
     font-style: italic;
-    margin-top: -15px;
     margin-bottom: 10px;
 }
 .experiences-content {
     text-align: center;
     font-family: "URW Gothic";
+    font-size: 14px;
 }
-
 
 /* FORMATION */
-.formation-h1 {
-    color : #310e56;
-    text-align: center;
-    font-size: 36px;
-    margin-top: 15px;
-}
 .formation-yearend {
     color: #3b5998;
     text-align: center;
@@ -67,28 +97,79 @@
     margin-top: -15px;
     margin-bottom: 40px;
 }
+.formations {
+    margin-top: 60px;
+}
 
 
 /* REALISATIONS */
-.realisations-h1 {
+
+
+
+/* BLOG */
+.article-div {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.article-title {
+    text-align: left;
+    color: #310e56;
+    font-size: 30px;
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.article-introduction {
+    color: grey;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 5px;
+}
+.article-content {
+    color: black;
+    margin-bottom: 40px;
+    font-size: 12px;
+    font-family: monospace, monospace;
+    text-align: justify;
+}
+
+
+/* COMMENTAIRES */
+.commentaires-title{
     color : #310e56;
-    text-align: center;
+    text-align: left;
     font-size: 36px;
     font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 10px;
+}
+.commentaires-div {
+    margin-top: 50px;
+}
+.commentaires-ligne-auteur {
+    margin-bottom: 50px;
+}
+.commentaires-liste-titre {
+    font-size: 26px;
+    font-family: monospace;
+    color : #310e56;
+    text-align: left;
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
+}
+.article-title:hover {
+    text-decoration: none;
 }
 
 
-
-
-/* NAVBAR */
-.navbar{
-    color: yellow;
+.form-custom {
+    margin-top: 90px;
+    text-align: center;
 }
 
-
-
-/* MAIN */
-.container-fluid {
-    background-color: red;
+.navbar .right li {
+    list-style-type: none;
 }

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Intro;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +14,11 @@ class CvController extends Controller
 {
 
     public function indexAction(Request $request) {
+        $doctrine = $this->getDoctrine();
+        $personnal_infos = $doctrine->getRepository(Intro::class);
+        $infos = $personnal_infos->findOneBy([]);
         return $this->render('AppBundle:cv:home.html.twig', [
-
+            "infos" => $infos
         ]);
     }
 

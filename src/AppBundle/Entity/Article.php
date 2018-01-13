@@ -8,16 +8,20 @@ use Doctrine\ORM\Mapping as ORM;
  * Article
  *
  * @ORM\Table(name="article", indexes={@ORM\Index(name="FK_article_id_user", columns={"id_user"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
+ *
  */
 class Article
 {
+
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_auteur", type="integer", nullable=false)
+     * @var \AppBundle\Entity\User
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *     @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     * })
      */
-    private $idAuteur;
+    private $user;
 
     /**
      * @var string
@@ -29,7 +33,15 @@ class Article
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=25, nullable=true)
+     * @ORM\Column(name="introduction", type="text", nullable=false)
+     */
+    private $introduction;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=100, nullable=false)
      */
     private $title;
 
@@ -50,23 +62,17 @@ class Article
     /**
      * @var integer
      *
-     * @ORM\Column(name="id_article", type="integer")
+     * @ORM\Column(name="id_article", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idArticle;
 
-    /**
-     * @var \AppBundle\Entity\User
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
-     * })
-     */
-    private $idUser;
 
-
+    public function __construct() {
+        $this->creationDate = new \DateTime();
+        $this->modificationDate = new \DateTime();
+    }
 
     /**
      * Set idAuteur
@@ -198,14 +204,43 @@ class Article
         return $this->idArticle;
     }
 
+    public function __toString()
+    {
+        return (string) $this->title;
+    }
+
     /**
-     * Set idUser
+     * Set introduction
      *
-     * @param \AppBundle\Entity\User $idUser
+     * @param string $introduction
      *
      * @return Article
      */
-    public function setIdUser(\AppBundle\Entity\User $idUser = null)
+    public function setIntroduction($introduction)
+    {
+        $this->introduction = $introduction;
+
+        return $this;
+    }
+
+    /**
+     * Get introduction
+     *
+     * @return string
+     */
+    public function getIntroduction()
+    {
+        return $this->introduction;
+    }
+
+    /**
+     * Set idUser
+     *
+     * @param integer $idUser
+     *
+     * @return Article
+     */
+    public function setIdUser($idUser)
     {
         $this->idUser = $idUser;
 
@@ -215,10 +250,34 @@ class Article
     /**
      * Get idUser
      *
-     * @return \AppBundle\Entity\User
+     * @return integer
      */
     public function getIdUser()
     {
         return $this->idUser;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Article
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

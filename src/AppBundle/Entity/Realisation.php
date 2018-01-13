@@ -125,4 +125,9 @@ class Realisation
     {
         return $this->idRealisation;
     }
+
+    public function __toString()
+    {
+        return (string) $this->title;
+    }
 }

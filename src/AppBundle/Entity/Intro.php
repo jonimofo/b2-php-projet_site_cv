@@ -94,4 +94,9 @@ class Intro
     {
         return $this->idIntro;
     }
+
+    public function __toString()
+    {
+        return (string) $this->phraseIntro;
+    }
 }

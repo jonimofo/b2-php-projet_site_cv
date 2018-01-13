@@ -7,24 +7,29 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Comment
  *
- * @ORM\Table(name="comment", indexes={@ORM\Index(name="FK_comment_id_article_1", columns={"id_article_1"}), @ORM\Index(name="FK_comment_id_user", columns={"id_user"})})
- * @ORM\Entity
+ * @ORM\Table(name="comment", indexes={@ORM\Index(name="FK_comment_id_article", columns={"id_article"}),
+ *     @ORM\Index(name="FK_comment_id_auteur", columns={"id_auteur"})})
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentRepository")
  */
 class Comment
 {
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_auteur", type="integer", nullable=false)
+     * @var \AppBundle\Entity\User
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *     @ORM\JoinColumn(name="id_auteur", referencedColumnName="id_user")
+     * })
      */
-    private $idAuteur;
+    private $auteur;
 
     /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_article", type="integer", nullable=false)
+     * @var \AppBundle\Entity\Article
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Article")
+     * @ORM\JoinColumns({
+     *     @ORM\JoinColumn(name="id_article", referencedColumnName="id_article", onDelete="CASCADE")
+     * })
      */
-    private $idArticle;
+    private $article;
 
     /**
      * @var string
@@ -57,25 +62,18 @@ class Comment
     private $idComment;
 
     /**
-     * @var \AppBundle\Entity\Article
+     * @var boolean
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Article")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_article_1", referencedColumnName="id_article")
-     * })
+     * @ORM\Column(name="is_valid", type="boolean")
      */
-    private $idArticle1;
+    private $is_valid;
 
-    /**
-     * @var \AppBundle\Entity\User
-     *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
-     * })
-     */
-    private $idUser;
 
+    public function __construct() {
+        $this->creationDate = new \DateTime();
+        $this->modificationDate = new \DateTime();
+        $this->setIsValid(false);
+    }
 
 
     /**
@@ -208,29 +206,6 @@ class Comment
         return $this->idComment;
     }
 
-    /**
-     * Set idArticle1
-     *
-     * @param \AppBundle\Entity\Article $idArticle1
-     *
-     * @return Comment
-     */
-    public function setIdArticle1(\AppBundle\Entity\Article $idArticle1 = null)
-    {
-        $this->idArticle1 = $idArticle1;
-
-        return $this;
-    }
-
-    /**
-     * Get idArticle1
-     *
-     * @return \AppBundle\Entity\Article
-     */
-    public function getIdArticle1()
-    {
-        return $this->idArticle1;
-    }
 
     /**
      * Set idUser
@@ -254,5 +229,82 @@ class Comment
     public function getIdUser()
     {
         return $this->idUser;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->content;
+    }
+
+    /**
+     * Set isValid
+     *
+     * @param boolean $isValid
+     *
+     * @return Comment
+     */
+    public function setIsValid($isValid)
+    {
+        $this->is_valid = $isValid;
+
+        return $this;
+    }
+
+    /**
+     * Get isValid
+     *
+     * @return boolean
+     */
+    public function getIsValid()
+    {
+        return $this->is_valid;
+    }
+
+    /**
+     * Set auteur
+     *
+     * @param \AppBundle\Entity\User $auteur
+     *
+     * @return Comment
+     */
+    public function setAuteur(\AppBundle\Entity\User $auteur = null)
+    {
+        $this->auteur = $auteur;
+
+        return $this;
+    }
+
+    /**
+     * Get auteur
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getAuteur()
+    {
+        return $this->auteur;
+    }
+
+    /**
+     * Set article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return Comment
+     */
+    public function setArticle(\AppBundle\Entity\Article $article = null)
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return \AppBundle\Entity\Article
+     */
+    public function getArticle()
+    {
+        return $this->article;
     }
 }
