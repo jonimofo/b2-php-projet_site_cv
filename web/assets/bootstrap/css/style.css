@@ -7,6 +7,9 @@ body {
 .main {
     height: 100%;
 }
+.navbar .right li {
+    list-style-type: none;
+}
 .h1-title {
     color : #310e56;
     text-align: center;
@@ -14,6 +17,11 @@ body {
     font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     margin-bottom: -15px;
     padding-top: 10px;
+}
+.espace-admin {
+    text-align: right;
+    margin-right: 28px;
+    margin-top: 5px;
 }
 
 
@@ -45,10 +53,16 @@ body {
 }
 
 
-
 /* COMPETENCES */
-
-
+.row  {
+    margin-top: 60px;
+    padding-top: 10px;
+    width: auto;
+    text-align: center;
+}
+.competences-div {
+    padding-bottom: 40px;
+}
 
 /* EXPERIENCES */
 .experiences-h1 {
@@ -76,6 +90,7 @@ body {
     font-family: "URW Gothic";
     font-size: 14px;
 }
+
 
 /* FORMATION */
 .formation-yearend {
@@ -110,7 +125,8 @@ body {
 .article-div {
     padding-right: 20px;
     padding-left: 20px;
-    margin-top: 10px;
+    margin-top: 10px;;
+    margin-bottom: 100px;
 }
 .article-title {
     text-align: left;
@@ -127,8 +143,8 @@ body {
 .article-content {
     color: black;
     margin-bottom: 40px;
-    font-size: 12px;
-    font-family: monospace, monospace;
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: justify;
 }
 
@@ -154,6 +170,10 @@ body {
     color : #310e56;
     text-align: left;
 }
+.commentaires-form {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 .bold {
     font-weight: bold;
 }
@@ -163,13 +183,14 @@ body {
 .article-title:hover {
     text-decoration: none;
 }
-
+.divider {
+    margin-top: 40px;
+}
 
 .form-custom {
     margin-top: 90px;
     text-align: center;
+    background-color: yellow;
 }
 
-.navbar .right li {
-    list-style-type: none;
-}
+

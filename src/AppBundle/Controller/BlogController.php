@@ -40,7 +40,7 @@ class BlogController extends Controller{
         $commentaire = new Comment();
         $form = $this->createFormBuilder()
             ->add('content', TextareaType::class, ['required'=>true,
-                'attr'=> ['placeholder' => 'Ajoutez un commentaire', 'rows' => 3, 'cols' => 130]])->getForm();
+                'attr'=> ['placeholder' => 'Ajoutez un commentaire', 'rows' => 8, 'cols' => 120]])->getForm();
 
         $form->handleRequest($request);
 

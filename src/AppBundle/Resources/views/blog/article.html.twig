@@ -18,21 +18,21 @@
     <div class="container-fluid">
         <div class="container">
             <p class="commentaires-title">{{ article.title }}</p>
-            <p>{{ article.content|nl2br }}</p>
+            <p class="article-content">{{ article.content|nl2br }}</p>
+
+            <hr class="divider">
+            {% if app.user %}
+                <div class="commentaires-form">
+                    {{ form_start(form) }}
+                    {{ form_widget(form.content) }}
+                    <input type="submit">
+                    {{ form_end(form) }}
+                </div>
+            {% endif %}
+            <hr class="divider">
+
             <div class="commentaires-div">
                 <p class="commentaires-liste-titre">COMMENTAIRES</p>
-
-
-                {% if app.user %}
-                    <div class="commentaires-form">
-                        {{ form_start(form) }}
-                        {{ form_widget(form.content) }}
-                        <input type="submit">
-                        {{ form_end(form) }}
-                    </div>
-                {% endif %}
-
-
                 {% for commentaire in commentaires %}
                     <p>{{ commentaire.content }}</p>
                     <p class="commentaires-ligne-auteur"><span class="italic">Ecrit par </span> :

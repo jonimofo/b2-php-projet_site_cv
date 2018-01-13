@@ -28,12 +28,8 @@
             <li class="nav-item"> <a class="nav-link" href="{{ path('blog_home') }}">BLOG</a> </li>
         </ul>
     <div class="right">
-        {% if is_granted('ROLE_SUPER_ADMIN') %}
-            <a class="nav-link" href="{{ path('sonata_admin_dashboard') }}">
-                ACCES ADMIN
-            </a>
-        {% endif %}
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+
 
             <a class="nav-link" href="{{ path('fos_user_security_logout') }}">
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -63,8 +59,12 @@
     {% endblock fos_user_content %}
 </div>
 
+{% if is_granted('ROLE_SUPER_ADMIN') %}
+    <div class="espace-admin"">
+    <a href="{{ path('sonata_admin_dashboard') }}" class="btn btn-light btn-sm" role="button">Espace Admin</a>
+</div>
 
-
+{% endif %}
     {% block main %}
 
     {%  endblock %}
