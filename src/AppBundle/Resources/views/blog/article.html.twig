@@ -21,14 +21,16 @@
             <p class="article-content">{{ article.content|nl2br }}</p>
 
             <hr class="divider">
+
             {% if app.user %}
                 <div class="commentaires-form">
                     {{ form_start(form) }}
                     {{ form_widget(form.content) }}
-                    <input type="submit">
+                        <input type="submit" class="btn-md btn-outline-primary -align-right" value="Envoyer">
                     {{ form_end(form) }}
                 </div>
             {% endif %}
+
             <hr class="divider">
 
             <div class="commentaires-div">

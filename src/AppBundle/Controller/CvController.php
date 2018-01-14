@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Intro;
+use AppBundle\Entity\Realisation;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -50,8 +51,11 @@ class CvController extends Controller
     }
 
     public function realisationsAction(Request $request) {
+        $doctrine = $this->getDoctrine();
+        $realisations_info = $doctrine->getRepository(Realisation::class);
+        $realisations = $realisations_info->findAll();
         return $this->render('AppBundle:cv:realisations.html.twig', [
-
+            "realisations" => $realisations
         ]);
     }
 

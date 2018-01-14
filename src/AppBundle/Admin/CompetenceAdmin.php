@@ -18,7 +18,8 @@ class CompetenceAdmin extends AbstractAdmin {
     }
 
     public function configureDatagridFilters(\Sonata\AdminBundle\Datagrid\DatagridMapper $filter) {
-
+        $filter
+            ->add('title');
     }
 
     public function configureListFields(\Sonata\AdminBundle\Datagrid\ListMapper $list) {

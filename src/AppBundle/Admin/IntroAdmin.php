@@ -17,7 +17,9 @@ class IntroAdmin extends AbstractAdmin {
     }
 
     public function configureDatagridFilters(\Sonata\AdminBundle\Datagrid\DatagridMapper $filter) {
-
+        $filter
+            ->add('phraseIntro')
+            ->add('aboutMe');
     }
 
     public function configureListFields(\Sonata\AdminBundle\Datagrid\ListMapper $list) {

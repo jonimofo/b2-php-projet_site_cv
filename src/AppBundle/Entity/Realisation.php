@@ -15,21 +15,21 @@ class Realisation
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="string", length=25, nullable=false)
+     * @ORM\Column(name="title", type="string", length=150, nullable=false)
      */
     private $title;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="year", type="datetime", nullable=false)
+     * @ORM\Column(name="year", type="string", nullable=true)
      */
     private $year;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text", nullable=true)
+     * @ORM\Column(name="content", type="text", nullable=false)
      */
     private $content;
 

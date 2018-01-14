@@ -25,6 +25,7 @@ body {
 }
 
 
+
 /* ACCUEIL */
 .intro-title {
     color : #310e56;
@@ -53,12 +54,14 @@ body {
 }
 
 
+
 /* COMPETENCES */
 .row  {
     margin-top: 60px;
     padding-top: 10px;
-    width: auto;
+    width: 750px;
     text-align: center;
+    margin-left: 160px;
 }
 .competences-div {
     padding-bottom: 40px;
@@ -92,6 +95,7 @@ body {
 }
 
 
+
 /* FORMATION */
 .formation-yearend {
     color: #3b5998;
@@ -117,7 +121,43 @@ body {
 }
 
 
+
 /* REALISATIONS */
+.rea-title {
+    color : #310e56;
+    text-align: center;
+    font-size: 36px;
+    font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    margin-bottom: -15px;
+    padding-top: 10px;
+}
+.rea-projets {
+    text-align: center;
+    margin-top: 40px;
+    width: 500px;
+    margin-left: 400px;
+    margin-top: 60px;
+
+}
+.rea-year {
+    font-size: 26px;
+    color: #310e56;
+}
+.rea-title {
+    color: grey;
+    text-align: center;
+    font-size: 26px;
+    padding-top: 20px;
+}
+.rea-content {
+    text-align: left;
+    font-family: "URW Gothic";
+    font-size: 18px;
+}
+.realisation {
+    padding-bottom: 40px;
+    text-align: center;
+}
 
 
 
@@ -173,6 +213,7 @@ body {
 .commentaires-form {
     margin-top: 40px;
     margin-bottom: 40px;
+    text-align: right;
 }
 .bold {
     font-weight: bold;
@@ -187,10 +228,40 @@ body {
     margin-top: 40px;
 }
 
+
+
+/** CONNEXION FORM **/
 .form-custom {
-    margin-top: 90px;
     text-align: center;
-    background-color: yellow;
+    background-color:  #f5f5f0;
+    width: 400px;
+    margin-left: 500px;
+    margin-top: 50px;
+    padding-top: 40px;
+    border: solid;
+    border-color: #A2A3A4;
+    border-width: thin;
+    border-radius: 15px;
 }
-
-
+.form-group {
+    padding-bottom: 10px;
+}
+.form-titre-connexion {
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #310e56;
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.checkbox {
+    margin-bottom: 40px;
+}
+.form-souvenir {
+    margin-bottom: 40px;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: -10px;
+}
+.btn-md {
+    margin-top: 20px;
+    margin-right: 5px;
+}

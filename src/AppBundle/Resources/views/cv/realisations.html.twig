@@ -1,13 +1,21 @@
 {%  extends 'AppBundle::layout.html.twig' %}
 
 {%  block title %}
+    {{ parent() }}
+    - Realisations
 {% endblock %}
 
 {% block main %}
     <h1 class="h1-title">REALISATIONS</h1>
     <div class="container-fluid">
-        <div class="container">
-            sdfsdfsdf
+        <div class="rea-projets">
+            {% for realisation in realisations %}
+                <div class="realisation">
+                    <div class="experiences-year">{{ realisation.year }} - {{ realisation.title }}</div>
+                    <span class="rea-content">{{ realisation.content }}</span>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
+
