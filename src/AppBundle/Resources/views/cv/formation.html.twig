@@ -1,0 +1,23 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - Formation
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid main">
+        <div class="container">
+            <h1 class="h1-title">FORMATION</h1>
+            <div class="formations">
+                {% for formation in formations %}
+                <div class="formation">
+                    <p class="formation-yearend">{{ formation.yearend }} {{ formation.yearstart }}</p>
+                    <p class="formation-title">{{ formation.title }}</p>
+                    <p class="formation-content">{{ formation.content }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

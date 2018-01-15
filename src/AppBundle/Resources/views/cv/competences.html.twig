@@ -1,0 +1,22 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }}
+    - Compétences
+{% endblock %}
+
+{% block main %}
+    <h1 class="h1-title">COMPETENCES</h1>
+    <div class="container">
+        <div class="row align-itemms-center">
+            {% for competence in competences %}
+                <div class="col-sm-4">
+                    <div class="competences-div">
+                        <img width="150" height=""
+                             src="{{ asset('assets/images/icones_competences/' ~ competence.imageName) }}" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

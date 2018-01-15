@@ -1,0 +1,19 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    BG - Blog
+{% endblock %}
+
+{% block main %}
+    <div class="container-fluid">
+        <div class="container">
+            <div class="article-div">
+                {% for article in articles %}
+                    <a class="article-title" href="{{ path('blog_article', {'id' : article.idArticle}) }}">{{ article.title }}</a>
+                    <p class="article-introduction">{{ article.introduction }}</p>
+                    <p class="article-content">{{ article.content|truncate(600,true)|nl2br }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

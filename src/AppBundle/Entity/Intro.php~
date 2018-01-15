@@ -1,0 +1,40 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Intro
+ *
+ * @ORM\Table(name="intro")
+ * @ORM\Entity
+ */
+class Intro
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phrase_intro", type="text", nullable=false)
+     */
+    private $phraseIntro;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="about_me", type="text", nullable=false)
+     */
+    private $aboutMe;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_intro", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idIntro;
+
+
+}
+

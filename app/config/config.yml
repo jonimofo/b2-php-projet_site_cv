@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: fr
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -67,3 +67,35 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# Sonata config
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "%mailer_user%"
+        sender_name: "%mailer_user%"
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        competences_images:
+            uri_prefix: /assets/images/icones_competences
+            upload_destination: '%kernel.project_dir%/assets/images/icones_competences'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+        realisation_images:
+            uri_prefix: /assets/images/icones_realisations
+            upload_destination: '%kernel.project_dir%/assets/images/icones_realisations'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

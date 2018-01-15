@@ -1,0 +1,38 @@
+cv_home:
+    path: /
+    defaults:
+        _controller: AppBundle:Cv:index
+
+cv_competences:
+    path: /competences
+    defaults:
+        _controller: AppBundle:Cv:competences
+
+cv_experiences:
+    path: /experiences
+    defaults:
+        _controller: AppBundle:Cv:experiences
+
+cv_formation:
+    path: /formation
+    defaults:
+        _controller: AppBundle:Cv:formation
+
+cv_realisations:
+    path: /realisations
+    defaults:
+        _controller: AppBundle:Cv:realisations
+
+
+blog_home:
+    path: /blog
+    defaults:
+        _controller: AppBundle:Blog:index
+
+blog_article:
+    path: /blog/article/{id}
+    defaults:
+        _controller: AppBundle:Blog:article
+        id: 1
+    requirements:
+        id: \d+

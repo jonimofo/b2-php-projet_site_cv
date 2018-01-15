@@ -1,0 +1,48 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block main %}
+    <div class="flash-contact">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+            <p class="commentaires-title">{{ article.title }}</p>
+            <p class="article-content">{{ article.content|nl2br }}</p>
+
+            <hr class="divider">
+
+            {% if app.user %}
+                <div class="commentaires-form">
+                    {{ form_start(form) }}
+                    {{ form_widget(form.content) }}
+                        <input type="submit" class="btn-md btn-outline-primary -align-right" value="Envoyer">
+                    {{ form_end(form) }}
+                </div>
+                <hr class="divider">
+            {% endif %}
+
+            <div class="commentaires-div">
+                <p class="commentaires-liste-titre">COMMENTAIRES</p>
+                {% for commentaire in commentaires %}
+                    <p>{{ commentaire.content }}</p>
+                    <p class="commentaires-ligne-auteur"><span class="italic">Ecrit par </span> :
+                        <span class="bold">{{ commentaire.auteur|capitalize }}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                        - &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="italic">Créé le </span> : {{ commentaire.creationDate|date('d/m/y') }}
+                    </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
