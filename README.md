@@ -43,3 +43,4 @@ L'admin peut, via le panel d'administration (bouton Espace Admin)
 Il me reste encore des choses à faire/implémenter dans le futur :
  - ajouter module d'inscription au site (ici les users sont déjà créés par le SUPER_ADMIN)
  - permettre aux utilisateurs d'uploader une photo de profil
+ - ajouter de vraies réalisations (même si vu que je suis orienté Systèmes et Réseaux c'est un peu plus compliqué)
