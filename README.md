@@ -20,7 +20,10 @@ Lancer le serveur :
 
 
 ## Fonctionnement
-Les utilisateurs sont déjà inscrits sur le site (cf le mèl que je vous ai envoyé pour les credentials)  
+Les utilisateurs sont déjà inscrits sur le site 
+``` user: benjamin mdp: pass role:SUPER_ADMIN
+user:bertrand mdp: pass role:USER
+user:manon mdp: pass role:USER```
 Les utilisateurs peuvent poster des commentaires sur le blog (s'ils sont identifiés)
   
 L'admin peut, via le panel d'administration (bouton Espace Admin)
