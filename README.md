@@ -13,14 +13,7 @@ Lancer l'installation du projet
 Si votre utilisateur APACHE par défaut n'est pas 'www-data'
   
 ```make install APACHE_USER=http```
-  
-  
-Credentials pour l'installation du projet  
-```database user : root```  
     
-```database password : root```
-  
-  
 Lancer le serveur : 
   
 ```make server```
