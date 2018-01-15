@@ -1,5 +1,5 @@
 # Projet Site CV
 
 ## Installation
-make install
+```make install
 make server run
