@@ -35,7 +35,11 @@ Les utilisateurs sont déjà inscrits sur le site
 L'admin peut, via le panel d'administration (bouton Espace Admin)
  - créer, modifier, supprimer un utilisateur
  - créer, modifier, supprimer un article, une compétence, une image, un commentaire, etc... 
-
+ - modérer les commentaires en attente de validation
 
 
 ## TO DO
+
+Il me reste encore des choses à faire/implémenter dans le futur :
+ - ajouter module d'inscription au site (ici les users sont déjà créés par le SUPER_ADMIN)
+ - permettre aux utilisateurs d'uploader une photo de profil
